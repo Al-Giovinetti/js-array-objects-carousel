@@ -26,11 +26,7 @@ const images = [
     }
 ];
 
- const btnSwipeLeft = document.querySelector("div.swipe-left")
-
-const btnSwipeRight = document.querySelector("div.swipe-right")
-
- let divCarousel = document.querySelector("div.carousel")
+let divCarousel = document.querySelector("div.carousel")
 
 images.forEach((element,index)=>{
     const divImgCarousel = document.createElement("div")
@@ -42,4 +38,30 @@ images.forEach((element,index)=>{
     divCarousel.append(divImgCarousel)
 })
 
-document.querySelectorAll("div.img-space")[0].classList.add("active")
+let  activeindex=3
+document.querySelectorAll("div.img-space")[activeindex].classList.add("active")
+
+const btnSwipeLeft = document.querySelector("div.swipe-left")
+btnSwipeLeft.addEventListener("click",function(){
+    if(activeindex == 0){
+        activeindex = images.length -1 
+    }else{
+    activeindex = activeindex - 1
+    }
+
+    document.querySelector("div.img-space.active").classList.remove("active")
+    document.querySelectorAll("div.img-space")[activeindex].classList.add("active")
+})
+
+const btnSwipeRight = document.querySelector("div.swipe-right")
+btnSwipeRight.addEventListener("click",function(){
+    if(activeindex == images.length-1){
+        activeindex = 0
+    }else{
+    activeindex = activeindex + 1
+    }
+    document.querySelector("div.img-space.active").classList.remove("active")
+    document.querySelectorAll("div.img-space")[activeindex].classList.add("active")
+})
+
+ 
