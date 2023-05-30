@@ -21,8 +21,8 @@ div.carousel{
 }
 
 div.carousel>.swipe{
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     background-color: whitesmoke;
     position: absolute;
     bottom: 50%;
@@ -38,6 +38,11 @@ div.carousel>.swipe{
     right: 3rem;
 }
 
+.swipe>*{
+    margin: auto;
+    font-size: 2rem;
+}
+
 .img-space{
     height: 100%;
     width: 100%;
@@ -46,11 +51,26 @@ div.carousel>.swipe{
 div.img-space img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:cover;
     object-position: right;
+}
+
+div.info-zone{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    width: 60%;
+    color: white;
+    background-color: rgba( 0,0,0,0.5);
+    padding: 1rem;
+}
+.d-none{
+    display:none;
 }
 
 .active{
     display: block;
 }
+
+
 

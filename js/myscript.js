@@ -28,6 +28,7 @@ const images = [
 
 let divCarousel = document.querySelector("div.carousel")
 
+// Fai un iterazione per tutta la lunghezza dell' arrey
 images.forEach((element,index)=>{
     const divImgCarousel = document.createElement("div")
     divImgCarousel.innerHTML=
@@ -36,11 +37,22 @@ images.forEach((element,index)=>{
     ` 
     divImgCarousel.classList.add("img-space")
     divCarousel.append(divImgCarousel)
-})
 
+    const divInfo = document.createElement("div")
+    divInfo.innerHTML =
+    `
+    <h1>${element.title}</h1>
+    <p>${element.text}</p>
+    `
+    divInfo.classList.add("info-zone","d-none")
+    divCarousel.append(divInfo)
+})
+//Stabilisci l' immagine che sarà la prima ad apparire(active)
 let  activeindex=3
 document.querySelectorAll("div.img-space")[activeindex].classList.add("active")
+document.querySelectorAll("div.info-zone")[activeindex].classList.add("active")
 
+//Bottone di sx
 const btnSwipeLeft = document.querySelector("div.swipe-left")
 btnSwipeLeft.addEventListener("click",function(){
     if(activeindex == 0){
@@ -51,8 +63,11 @@ btnSwipeLeft.addEventListener("click",function(){
 
     document.querySelector("div.img-space.active").classList.remove("active")
     document.querySelectorAll("div.img-space")[activeindex].classList.add("active")
+    document.querySelector("div.info-zone.active").classList.remove("active")
+    document.querySelectorAll("div.info-zone")[activeindex].classList.add("active")
+    
 })
-
+//Bottone di dx
 const btnSwipeRight = document.querySelector("div.swipe-right")
 btnSwipeRight.addEventListener("click",function(){
     if(activeindex == images.length-1){
@@ -62,6 +77,9 @@ btnSwipeRight.addEventListener("click",function(){
     }
     document.querySelector("div.img-space.active").classList.remove("active")
     document.querySelectorAll("div.img-space")[activeindex].classList.add("active")
+    document.querySelector("div.info-zone.active").classList.remove("active")
+    document.querySelectorAll("div.info-zone")[activeindex].classList.add("active")
+    
 })
 
  
