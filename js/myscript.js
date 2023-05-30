@@ -31,13 +31,15 @@ const images = [
 const btnSwipeRight = document.querySelector("div.swipe-right")
 
  let divCarousel = document.querySelector("div.carousel")
-console.log(divCarousel)
 
-images.forEach((element)=>{
+images.forEach((element,index)=>{
     const divImgCarousel = document.createElement("div")
     divImgCarousel.innerHTML=
-    `<div>
-        <img src="${element.image}" alt="${element.title}">
-    </div>` 
+    `
+    <img src="${element.image}" alt="${element.title}">
+    ` 
+    divImgCarousel.classList.add("img-space")
     divCarousel.append(divImgCarousel)
 })
+
+document.querySelectorAll("div.img-space")[0].classList.add("active")
