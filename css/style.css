@@ -1,0 +1,36 @@
+body{
+    background-color: aquamarine;
+}
+
+div.carousel{
+    padding: 1rem;
+    width: 80%;
+    height: 500px;
+    margin: 2rem auto;
+    background-color: whitesmoke;
+    position: relative;
+}
+div.carousel>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    display: block;
+}
+
+div.carousel>.swipe{
+    height: 50px;
+    width: 50px;
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(+50%);
+}
+
+.swipe.swipe-sx{
+    left: 3rem;
+}
+
+.swipe.swipe-dx{
+    right: 3rem;
+}
